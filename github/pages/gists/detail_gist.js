@@ -1,5 +1,8 @@
 module.exports = {
   commands: [
+    {
+      confirm_delete_prompt: confirm_delete_prompt
+    }
   ],
   elements: {
     edit_button: 'a.btn.btn-sm svg.octicon.octicon-pencil',
@@ -9,3 +12,10 @@ module.exports = {
     file_content: 'div table tbody'
   },
 };
+
+function confirm_delete_prompt(is_accept){
+  if(is_accept)
+    this.api.acceptAlert();
+  else
+    this.api.dismissAlert()
+}
