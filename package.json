@@ -1,0 +1,15 @@
+{
+  "name": "sp",
+  "version": "0.0.1",
+  "description": "testing stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "nnd",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^84.0.1",
+    "nightwatch": "^1.3.7"
+  }
+}
