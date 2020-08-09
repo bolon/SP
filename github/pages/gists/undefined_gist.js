@@ -1,3 +1,6 @@
+var request = require('request');
+var assert = require('assert');
+
 module.exports = {
   commands: [
     {
@@ -19,7 +22,6 @@ function navigate_to_deleted_gist(url){
 function assert_deleted_gist(gist_url, expected_http_code){
   this.api.perform(done => {
             request(gist_url, function (error, response, body) {
-                console.log(response.statusCode)
                 assert.ok(response.statusCode == expected_http_code)
                 done()
             }) 

@@ -21,14 +21,9 @@ module.exports = {
       detail_gist_page.click('@delete_button').confirm_delete_prompt(true);
       
       var EXPECTED_HTTP_CODE = 404;
-      //todo: change assertion for counter in list of gists
-      client.perform(function(){
-        var undefined_page = client.page.gists.undefined_gist();
-          request(gist_url, function (error, response, body) {
-            console.log(gist_url)
-            client.assert.ok(response.statusCode == EXPECTED_HTTP_CODE)
-          }) 
-      })
+      var undefined_gist_page = client.page.gists.undefined_gist();
+      //todo: add assertion for counter in list of gists
+      undefined_gist_page.assert_deleted_gist(gist_url, EXPECTED_HTTP_CODE)
     })
   }
 }
